@@ -1,0 +1,144 @@
+/* Strat Variables */
+:root{
+/* Primary */
+--Soft-blue: hsl(215, 51%, 70%);
+--Cyan: hsl(178, 100%, 50%);
+
+/* Neutral */
+--Very-dark-blue-main-BG: hsl(217, 54%, 11%);
+--Very-dark-blue-card-BG: hsl(216, 50%, 16%);
+--Very-dark-blue-line: hsl(215, 32%, 27%);
+--White: hsl(0, 0%, 100%);
+}
+/* End Variables */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Outfit', sans-serif;
+}
+.parent{
+    min-height: 100vh;
+    background-color: var(--Very-dark-blue-main-BG);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card{
+    background-color: var(--Very-dark-blue-card-BG);
+    width: 350px;
+    padding: 25px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+}
+.card .image{
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+}
+.card .image img{
+    width: 300px;
+    height: 100%;
+    border-radius: 10px;
+}
+.card .image::before{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-radius: 10px;
+    background-color: hsl(178, 100%, 50%, 50%);
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    transition: .5s;
+    z-index: 1;
+}
+.card .image:hover::before{
+    width: 100%;
+    height: 100%;
+}
+.card .image .view{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: 2;
+}
+.card .image .view img{
+    width: 0px;
+    height: 0px;
+    transition: .5s;
+}
+.card .image:hover .view img{
+    width: 40px;
+    height: 40px;
+}
+.card .content h2{
+    color: var(--White);
+    margin: 15px 0;
+    cursor: pointer;
+    transition: .3s;
+    font-size: 22px;
+}
+.card .content h2:hover{
+    color: var(--Cyan);
+}
+.card .content p{
+    color: var(--Soft-blue);
+    font-size: 18px;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+.card .content .info{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--Very-dark-blue-line); 
+}
+.card .info span{
+    display: flex;
+    align-items: center;
+}
+.card .content .info span img{
+    margin-right: 5px;
+}
+.card .content .info span:first-child{
+    color: var(--Cyan);
+    font-weight: bold;
+}
+.card .content .info span:last-child{
+    color: var(--Soft-blue);
+}
+.card .footer{
+    margin: 15px 0 10px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+.card .footer img{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 1px solid var(--White);
+}
+.card .footer .first{
+    color: var(--Soft-blue);
+}
+.card .footer .last{
+    color: var(--White);
+    cursor: pointer;
+    transition: .3s;
+}
+.card .footer .last:hover{
+    color: var(--Cyan);
+}
+@media(max-width: 767px){
+    .card{
+        margin: 30px auto;
+    }
+}
+

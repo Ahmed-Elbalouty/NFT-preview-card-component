@@ -1,2 +1,6 @@
-# NFT-preview-card-component
-This repository for solving "NFT preview card component" challenge from Front-End Mentor challenges
+# Frontend Mentor - NFT preview card component
+
+![Design preview for the NFT preview card component coding challenge](./design/desktop-preview.jpg)
+
+## Welcome! 👋
+
